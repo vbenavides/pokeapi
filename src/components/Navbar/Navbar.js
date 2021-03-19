@@ -7,8 +7,9 @@ class Navbar extends React.Component {
 			<NavbarContainer>
 				<Logo src="https://assets.pokemon.com/assets/cms2/img/misc/gus/buttons/logo-pokemon-79x45.png" alt=""/>
 				<ListNavbar>
+					<li>Home</li>
+					<li>Repository</li>
 					<li>Vbenavides</li>
-					<li>Github</li>
 				</ListNavbar>
 			</NavbarContainer>
 		)

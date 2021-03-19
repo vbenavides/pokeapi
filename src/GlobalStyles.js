@@ -1,5 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
 
+export const Media = {
+  desktop: `@media(min-width: 480px)`
+}
+
 export const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -10,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
   html {
     font-size: 62.5%;
     background-color: gray;
+
   }
 
 

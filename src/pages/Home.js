@@ -1,9 +1,14 @@
 import React from 'react';
+import Search from '../components/Search/Search';
+import { Title } from './HomeStyles';
 
 class Home extends React.Component{
 	render() {
 		return(
-			<h2>Holaaaa</h2>
+			<React.Fragment>
+				<Title>Pokédex</Title>
+				<Search />
+			</React.Fragment>
 		)
 
 	}
