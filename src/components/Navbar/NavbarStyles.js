@@ -17,6 +17,8 @@ export const NavbarContainer = styled.div`
 
 export const Logo = styled.img`
 	display: block;
+	width: 130px;
+	cursor: pointer;
 `
 export const ListNavbar = styled.ul`
 	display: flex;
@@ -25,7 +27,7 @@ export const ListNavbar = styled.ul`
 
 	li {
 		list-style: none;
-		padding-left: 7px;
+		padding-right: 10px;
 		font-weight: bold;
 	}
 `

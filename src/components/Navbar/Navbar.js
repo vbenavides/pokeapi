@@ -1,19 +1,16 @@
 import React from 'react';
 import { ListNavbar, Logo, NavbarContainer } from './NavbarStyles';
 
-class Navbar extends React.Component {
-	render(){
-		return(
-			<NavbarContainer>
-				<Logo src="https://assets.pokemon.com/assets/cms2/img/misc/gus/buttons/logo-pokemon-79x45.png" alt=""/>
-				<ListNavbar>
-					<li>Home</li>
-					<li>Repository</li>
-					<li>Vbenavides</li>
-				</ListNavbar>
-			</NavbarContainer>
-		)
-	}
+const Navbar = () => {
+
+	return(
+		<NavbarContainer>
+			<Logo onClick={() => window.location.reload(false)} src="https://assets.pokemon.com/assets/cms2/img/misc/gus/buttons/logo-pokemon-79x45.png" alt=""/>
+			<ListNavbar>
+				<li>Vbenavides</li>
+			</ListNavbar>
+		</NavbarContainer>
+	)
 }
 
 export default Navbar;

@@ -44,7 +44,7 @@ export const InputContainer = styled.div`
 
         .input-text {
         height: 40px;
-        padding: 8px 0;
+        padding: 8px 5px;
         width: 70%;
         margin-right: 30px;
         border-radius: 5px;
@@ -60,7 +60,7 @@ export const InputContainer = styled.div`
           background-image: url(https://assets.pokemon.com/static2/_ui/img/chrome/forms/input-search-bg.png);
           background-repeat: no-repeat;
           background-position: center;
-
+          cursor: pointer;
         }
     }
 
