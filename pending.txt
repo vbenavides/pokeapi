@@ -1,0 +1,13 @@
+pokeapi:
+crear un nav
+mejorar diseño
+agregar estilo para los tipos de elementos
+agregar animación de cards
+poner un loader al inicio de la pagina
+agregar previsualizador de busqueda
+cambiar boton de cambio de pagina por una de carga continua
+
+agregar pagina individual para cada pokemon
+agregar evoluciones
+agregar login
+agregar pagina de favoritos

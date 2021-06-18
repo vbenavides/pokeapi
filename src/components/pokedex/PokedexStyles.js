@@ -1,16 +1,16 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const PokedexContainer = styled.div`
-  max-width: 913px;
+export const StyledSection = styled.section`
+  max-width: 1024px;
   margin: 0 auto;
   background-color: white;
+`;
 
-`
-
-export const PokemonContainer = styled.div`
+export const PokemonContainer = styled.ul`
   display: grid;
+  margin: 0 7%;
   grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
-`
+`;
 
 export const PokedexLoading = styled.div`
   display: flex;
@@ -21,10 +21,10 @@ export const PokedexLoading = styled.div`
   margin: 0 auto;
   height: 90px;
   max-width: 913px;
-	min-width: 260px;
+  min-width: 260px;
   align-items: flex-end;
-  padding: 20px ;
+  padding: 20px;
   color: rgb(145, 145, 145);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
-`
+`;

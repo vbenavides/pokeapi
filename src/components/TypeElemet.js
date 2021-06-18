@@ -1,4 +1,4 @@
-const TypeElement = {
+export const TypeElement = {
   bug: '#729f3f',
   dragon: '#53a4cf',
   fairy: '#fdb9e9',
@@ -17,6 +17,17 @@ const TypeElement = {
   poison: '#b97fc9',
   rock: '#a38c21',
   water: '#4592c4',
-}
+};
 
-export default TypeElement;
+export const TypeColorWhite = {
+  dark: 'white',
+  psychic: 'white',
+  ghost: 'white',
+  dragon: 'white',
+  bug: 'white',
+  fire: 'white',
+  electric: 'white',
+  fighting: 'white',
+  poison: 'white',
+  water: 'white',
+};
