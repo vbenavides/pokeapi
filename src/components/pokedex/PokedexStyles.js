@@ -9,6 +9,7 @@ export const StyledSection = styled.section`
 export const PokemonContainer = styled.ul`
   display: grid;
   margin: 0 7%;
+  padding: 20px 0;
   grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
 `;
 

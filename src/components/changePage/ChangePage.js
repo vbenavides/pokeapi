@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   PaginatorContainer,
   PaginatorButton,
@@ -6,9 +6,11 @@ import {
 } from './ChangePageStyles';
 import LeftArrow from '../../assets/left-arrow.svg';
 import RightArrow from '../../assets/right-arrow.svg';
+import AppContext from '../../context/AppContext';
 
 const ChangePage = (props) => {
-  const { leftClick, rightClick, totalPages, page } = props;
+  const { leftClick, rightClick, totalPages } = props;
+  const { page } = useContext(AppContext);
 
   return (
     <PaginatorContainer>

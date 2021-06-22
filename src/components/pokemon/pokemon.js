@@ -27,9 +27,10 @@ const Pokemon = (props) => {
       </div>
 
       <CardTypeContainer>
-        {pokemon.types.map((type) => {
+        {pokemon.types.map((type, idx) => {
           return (
             <CardElement
+              key={idx}
               style={{
                 backgroundColor: TypeElement[type.type.name],
                 color: TypeColorWhite[type.type.name],

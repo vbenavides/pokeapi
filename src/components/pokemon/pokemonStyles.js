@@ -20,7 +20,7 @@ export const StyledLiContainer = styled.div`
 export const StyledImg = styled.img`
   background-color: #f2f2f2;
   width: 100%;
-  border-radius: 15px;
+  border-radius: 3px;
 `;
 export const StyledPNumber = styled.p`
   color: #919191;

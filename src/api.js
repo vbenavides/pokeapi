@@ -23,3 +23,15 @@ export const getPokemonData = async (url) => {
     return data;
   } catch (err) {}
 };
+
+// export const randomPokemon = async () => {
+//   const generatorRandomNum =yy () => Math.floor(Math.random() * 200 +1)
+
+//   try {
+//     let url = "https://pokeapi.co/api/v2/pokemon/1"
+
+//   }
+// }
+
+// randomArray = (length, max) =>
+//   [...new Array(length)].map(() => Math.round(Math.random() * max));
