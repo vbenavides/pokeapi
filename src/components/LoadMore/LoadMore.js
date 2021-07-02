@@ -23,20 +23,20 @@ const StyledButtonDiv = styled.div`
 `;
 
 const LoadMore = (props) => {
-  const { loadMore, loading } = props;
+  const { loadMore, loadingButton } = props;
 
   return (
     <StyledButtonDiv>
-      {/* {loading && (
+      {loadingButton && (
         <button type='button' className='LoadMore'>
           Loading...
         </button>
       )}
-      {!loading && (
-      )} */}
-      <button type='button' className='LoadMore' onClick={loadMore}>
-        Load more Pokémon
-      </button>
+      {!loadingButton && (
+        <button type='button' className='LoadMore' onClick={loadMore}>
+          Load more Pokémon
+        </button>
+      )}
     </StyledButtonDiv>
   );
 };

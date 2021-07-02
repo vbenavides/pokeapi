@@ -7,7 +7,7 @@ import {
 } from './SearchStyles';
 
 const Search = (props) => {
-  const { onSearch } = props;
+  const { onSearch, setPage } = props;
   const [searchPoke, setSeachPoke] = useState('');
 
   const onChange = (e) => {
@@ -18,8 +18,8 @@ const Search = (props) => {
   };
 
   const onClick = async (e) => {
+    setPage(0);
     onSearch(searchPoke);
-    console.log(searchPoke);
   };
 
   return (

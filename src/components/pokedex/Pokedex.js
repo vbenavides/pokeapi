@@ -1,36 +1,34 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Pokemon from '../pokemon/pokemon';
 import {
   StyledSection,
   PokemonContainer,
   PokedexLoading,
 } from './PokedexStyles';
-import ChangePage from '../changePage/ChangePage';
 import LoadMore from '../LoadMore/LoadMore';
 import AppContext from '../../context/AppContext';
 
 const Pokedex = (props) => {
-  const { setPage, totalPages, loading, page } = props;
-  const { state } = useContext(AppContext);
-  // const { loading, page } = state;
+  const {
+    setPage,
+    totalPages,
+    loading,
+    page,
+    setLoading,
+    loadingButton,
+    setLoadingButton,
+  } = props;
+  const { state, activator, setActivator } = useContext(AppContext);
   const pokemons = state.results;
-  // console.log(page);
-
-  // const lastPage = () => {
-  //   const nextPage = Math.max(page - 1, 0);
-  //   setPage(nextPage);
-  // };
-
-  // const nextPage = () => {
-  //   const nextPage = Math.min(page + 1, totalPages - 1);
-  //   setPage(nextPage);
-  // };
 
   const loadMore = () => {
+    setLoadingButton(true);
     const nextPage = Math.min(page + 1, totalPages - 1);
     setPage(nextPage);
     // addDataPokemons();
-    console.log(nextPage);
+    setActivator(activator + 1);
+    // console.log(nextPage);
+    // setLoadingButton(false);
   };
 
   return (
@@ -45,13 +43,15 @@ const Pokedex = (props) => {
         </PokemonContainer>
       )}
 
-      {/* <ChangePage
-        page={page + 1}
-        totalPages={totalPages}
-        leftClick={lastPage}
-        rightClick={nextPage}
-      /> */}
-      <LoadMore totalPages={totalPages} loadMore={loadMore} loading={loading} />
+      {!loading && (
+        <LoadMore
+          loadingButton={loadingButton}
+          // totalPages={totalPages}
+          loadMore={loadMore}
+          // loading={loading}
+          // setPage={setPage}
+        />
+      )}
     </StyledSection>
   );
 };
