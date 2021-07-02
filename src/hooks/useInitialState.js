@@ -4,11 +4,13 @@ import { useMemo, useState, useEffect, useRef } from 'react';
 const useInitialState = () => {
   const initialState = {
     count: '',
+    dataLinks: [],
+    results: [],
     loading: false,
     searching: false,
-    results: [],
-    page: 0,
+    // page: 0,
     notFound: false,
+    totalPages: 0,
   };
 
   const [state, setState] = useState(initialState);
@@ -20,16 +22,38 @@ const useInitialState = () => {
 
   // const addDataPokemons = useRef(() => {});
 
-  const addDataPokemons = (payload) => {
+  const addDataPokemons = (data, payload) => {
     setState({
       ...state,
       // results: [...state.results, payload],
+      dataLinks: data.results,
       results: [...state.results].concat(payload),
+      // results: results,
+      loading: false,
+      searching: true,
+      notFound: false,
+      // totalPages: Math.ceil(state.dataLinks.count / 12),
+    });
+  };
+
+  const addSearchPokemon = (payload) => {
+    setState({
+      ...state,
+      results: payload,
+    });
+  };
+
+  const defaultState = (payload) => {
+    setState({
+      ...state,
+      results: payload,
     });
   };
 
   return {
     addDataPokemons,
+    addSearchPokemon,
+    defaultState,
     page,
     setPage,
     state,

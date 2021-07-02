@@ -10,10 +10,11 @@ import LoadMore from '../LoadMore/LoadMore';
 import AppContext from '../../context/AppContext';
 
 const Pokedex = (props) => {
-  const { totalPages } = props;
-  const { state, page, setPage, loading } = useContext(AppContext);
+  const { setPage, totalPages, loading, page } = props;
+  const { state } = useContext(AppContext);
+  // const { loading, page } = state;
   const pokemons = state.results;
-  console.log(page);
+  // console.log(page);
 
   // const lastPage = () => {
   //   const nextPage = Math.max(page - 1, 0);
@@ -24,6 +25,13 @@ const Pokedex = (props) => {
   //   const nextPage = Math.min(page + 1, totalPages - 1);
   //   setPage(nextPage);
   // };
+
+  const loadMore = () => {
+    const nextPage = Math.min(page + 1, totalPages - 1);
+    setPage(nextPage);
+    // addDataPokemons();
+    console.log(nextPage);
+  };
 
   return (
     <StyledSection>
@@ -43,7 +51,7 @@ const Pokedex = (props) => {
         leftClick={lastPage}
         rightClick={nextPage}
       /> */}
-      <LoadMore />
+      <LoadMore totalPages={totalPages} loadMore={loadMore} loading={loading} />
     </StyledSection>
   );
 };

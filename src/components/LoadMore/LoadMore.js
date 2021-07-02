@@ -1,34 +1,43 @@
-import React, { useContext } from 'react';
-import AppContext from '../../context/AppContext';
+import React from 'react';
+import styled from 'styled-components';
 
-const LoadMore = () => {
-  const { page, setPage, searching, totalPages, addDataPokemons } =
-    useContext(AppContext);
+const StyledButtonDiv = styled.div`
+  display: flex;
+  justify-content: center;
 
-  const handleLoadMore = () => {
-    const nextPage = Math.min(page + 1, totalPages - 1);
-    setPage(nextPage);
-    // addDataPokemons();
-    console.log(nextPage);
-  };
+  button {
+    background-color: #44c767;
+    border-radius: 4px;
+    border: 1px solid #18ab29;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+    margin-bottom: 20px;
+  }
+`;
+
+const LoadMore = (props) => {
+  const { loadMore, loading } = props;
 
   return (
-    <div>
-      {searching && (
+    <StyledButtonDiv>
+      {/* {loading && (
         <button type='button' className='LoadMore'>
           Loading...
         </button>
       )}
-      {!searching && (
-        <button
-          type='button'
-          className='LoadMore'
-          onClick={() => handleLoadMore()}
-        >
-          Load more Pokémon
-        </button>
-      )}
-    </div>
+      {!loading && (
+      )} */}
+      <button type='button' className='LoadMore' onClick={loadMore}>
+        Load more Pokémon
+      </button>
+    </StyledButtonDiv>
   );
 };
 

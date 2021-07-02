@@ -19,6 +19,7 @@ const Search = (props) => {
 
   const onClick = async (e) => {
     onSearch(searchPoke);
+    console.log(searchPoke);
   };
 
   return (
