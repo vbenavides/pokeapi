@@ -28,7 +28,12 @@ const Search = (props) => {
         <StyledInputContainer>
           <p className='search-title'>Name or Number</p>
           <div>
-            <input className='input-text' type='text' onChange={onChange} />
+            <input
+              className='input-text'
+              type='text'
+              onChange={onChange}
+              required
+            />
             <button className='input-button' onClick={onClick} />
           </div>
         </StyledInputContainer>

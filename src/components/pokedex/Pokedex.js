@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Pokemon from '../pokemon/pokemon';
 import {
   StyledSection,
@@ -14,21 +14,27 @@ const Pokedex = (props) => {
     totalPages,
     loading,
     page,
-    setLoading,
     loadingButton,
     setLoadingButton,
+    searched,
+    defaultPokemons,
+    setSearched,
   } = props;
   const { state, activator, setActivator } = useContext(AppContext);
   const pokemons = state.results;
 
   const loadMore = () => {
     setLoadingButton(true);
+
+    if (searched) {
+      defaultPokemons();
+      setLoadingButton(false);
+      setSearched(false);
+      return;
+    }
     const nextPage = Math.min(page + 1, totalPages - 1);
     setPage(nextPage);
-    // addDataPokemons();
     setActivator(activator + 1);
-    // console.log(nextPage);
-    // setLoadingButton(false);
   };
 
   return (
@@ -46,10 +52,8 @@ const Pokedex = (props) => {
       {!loading && (
         <LoadMore
           loadingButton={loadingButton}
-          // totalPages={totalPages}
           loadMore={loadMore}
-          // loading={loading}
-          // setPage={setPage}
+          searched={searched}
         />
       )}
     </StyledSection>
